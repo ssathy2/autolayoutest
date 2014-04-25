@@ -21,6 +21,9 @@
 		DE5F6249190618ED00C0D5D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F622B190618ED00C0D5D5 /* UIKit.framework */; };
 		DE5F6251190618ED00C0D5D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE5F624F190618ED00C0D5D5 /* InfoPlist.strings */; };
 		DE5F6253190618ED00C0D5D5 /* autolayouttestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F6252190618ED00C0D5D5 /* autolayouttestTests.m */; };
+		DE5F625E1909E75E00C0D5D5 /* DDDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F625D1909E75D00C0D5D5 /* DDDMapViewController.m */; };
+		DE5F62601909E7BC00C0D5D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F625F1909E7BC00C0D5D5 /* MapKit.framework */; };
+		DE5F62621909E7CC00C0D5D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F62611909E7CC00C0D5D5 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		DE5F624E190618ED00C0D5D5 /* autolayouttestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "autolayouttestTests-Info.plist"; sourceTree = "<group>"; };
 		DE5F6250190618ED00C0D5D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE5F6252190618ED00C0D5D5 /* autolayouttestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = autolayouttestTests.m; sourceTree = "<group>"; };
+		DE5F625C1909E75D00C0D5D5 /* DDDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMapViewController.h; sourceTree = "<group>"; };
+		DE5F625D1909E75D00C0D5D5 /* DDDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDMapViewController.m; sourceTree = "<group>"; };
+		DE5F625F1909E7BC00C0D5D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DE5F62611909E7CC00C0D5D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5F62621909E7CC00C0D5D5 /* CoreLocation.framework in Frameworks */,
+				DE5F62601909E7BC00C0D5D5 /* MapKit.framework in Frameworks */,
 				DE5F622A190618ED00C0D5D5 /* CoreGraphics.framework in Frameworks */,
 				DE5F622C190618ED00C0D5D5 /* UIKit.framework in Frameworks */,
 				DE5F6228190618ED00C0D5D5 /* Foundation.framework in Frameworks */,
@@ -101,6 +110,8 @@
 		DE5F6226190618ED00C0D5D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE5F62611909E7CC00C0D5D5 /* CoreLocation.framework */,
+				DE5F625F1909E7BC00C0D5D5 /* MapKit.framework */,
 				DE5F6227190618ED00C0D5D5 /* Foundation.framework */,
 				DE5F6229190618ED00C0D5D5 /* CoreGraphics.framework */,
 				DE5F622B190618ED00C0D5D5 /* UIKit.framework */,
@@ -113,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				DE5F6236190618ED00C0D5D5 /* DDDAppDelegate.h */,
+				DE5F625C1909E75D00C0D5D5 /* DDDMapViewController.h */,
+				DE5F625D1909E75D00C0D5D5 /* DDDMapViewController.m */,
 				DE5F6237190618ED00C0D5D5 /* DDDAppDelegate.m */,
 				DE5F6239190618ED00C0D5D5 /* Main.storyboard */,
 				DE5F623C190618ED00C0D5D5 /* DDDViewController.h */,
@@ -252,6 +265,7 @@
 			files = (
 				DE5F6234190618ED00C0D5D5 /* main.m in Sources */,
 				DE5F623E190618ED00C0D5D5 /* DDDViewController.m in Sources */,
+				DE5F625E1909E75E00C0D5D5 /* DDDMapViewController.m in Sources */,
 				DE5F6238190618ED00C0D5D5 /* DDDAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +471,7 @@
 				DE5F6258190618ED00C0D5D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE5F6259190618ED00C0D5D5 /* Build configuration list for PBXNativeTarget "autolayouttestTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +480,7 @@
 				DE5F625B190618ED00C0D5D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
