@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3C6ECE191078F4002868EB /* DDDLocalSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6ECD191078F4002868EB /* DDDLocalSearchManager.m */; };
+		DE3C6ED219107C21002868EB /* NSMutableArray+Modification.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6ED019107C21002868EB /* NSMutableArray+Modification.m */; };
 		DE5F6228190618ED00C0D5D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F6227190618ED00C0D5D5 /* Foundation.framework */; };
 		DE5F622A190618ED00C0D5D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F6229190618ED00C0D5D5 /* CoreGraphics.framework */; };
 		DE5F622C190618ED00C0D5D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F622B190618ED00C0D5D5 /* UIKit.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE3C6ECC191078F4002868EB /* DDDLocalSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDLocalSearchManager.h; sourceTree = "<group>"; };
+		DE3C6ECD191078F4002868EB /* DDDLocalSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDLocalSearchManager.m; sourceTree = "<group>"; };
+		DE3C6ED019107C21002868EB /* NSMutableArray+Modification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Modification.m"; path = "../../P2PTestApp/P2PTestApp/NSMutableArray+Modification.m"; sourceTree = "<group>"; };
+		DE3C6ED119107C21002868EB /* NSMutableArray+Modification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Modification.h"; path = "../../P2PTestApp/P2PTestApp/NSMutableArray+Modification.h"; sourceTree = "<group>"; };
 		DE5F6224190618ED00C0D5D5 /* autolayouttest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autolayouttest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5F6227190618ED00C0D5D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE5F6229190618ED00C0D5D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE3C6ECF19107BCF002868EB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DE3C6ED019107C21002868EB /* NSMutableArray+Modification.m */,
+				DE3C6ED119107C21002868EB /* NSMutableArray+Modification.h */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		DE5F621B190618ED00C0D5D5 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +138,7 @@
 		DE5F622D190618ED00C0D5D5 /* autolayouttest */ = {
 			isa = PBXGroup;
 			children = (
+				DE3C6ECF19107BCF002868EB /* Categories */,
 				DE5F6236190618ED00C0D5D5 /* DDDAppDelegate.h */,
 				DE5F625C1909E75D00C0D5D5 /* DDDMapViewController.h */,
 				DE5F625D1909E75D00C0D5D5 /* DDDMapViewController.m */,
@@ -132,6 +148,8 @@
 				DE5F623D190618ED00C0D5D5 /* DDDViewController.m */,
 				DE5F623F190618ED00C0D5D5 /* Images.xcassets */,
 				DE5F622E190618ED00C0D5D5 /* Supporting Files */,
+				DE3C6ECC191078F4002868EB /* DDDLocalSearchManager.h */,
+				DE3C6ECD191078F4002868EB /* DDDLocalSearchManager.m */,
 			);
 			path = autolayouttest;
 			sourceTree = "<group>";
@@ -264,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5F6234190618ED00C0D5D5 /* main.m in Sources */,
+				DE3C6ED219107C21002868EB /* NSMutableArray+Modification.m in Sources */,
+				DE3C6ECE191078F4002868EB /* DDDLocalSearchManager.m in Sources */,
 				DE5F623E190618ED00C0D5D5 /* DDDViewController.m in Sources */,
 				DE5F625E1909E75E00C0D5D5 /* DDDMapViewController.m in Sources */,
 				DE5F6238190618ED00C0D5D5 /* DDDAppDelegate.m in Sources */,
