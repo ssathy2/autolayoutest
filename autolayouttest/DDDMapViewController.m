@@ -7,16 +7,17 @@
 //
 
 #import "DDDMapViewController.h"
-#import "DDDLocalSearchManager.h"
+#import "DDDMapViewModel.h"
 
-@interface DDDMapViewController ()<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UITextField *mapSearchTextField;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *mainContainerView;
-@property (strong, nonatomic) DDDLocalSearchManager *searchManager;
+@interface DDDMapViewController ()<UITextFieldDelegate, DDDMapViewListener>
+@property (weak, nonatomic) IBOutlet MKMapView		*mapView;
+@property (weak, nonatomic) IBOutlet UITextField	*mapSearchTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView	*scrollView;
+@property (weak, nonatomic) IBOutlet UIView			*mainContainerView;
+@property (weak, nonatomic) IBOutlet UIButton		*currentLocationButton;
 
-@property (nonatomic, assign) CGPoint defaultTextfieldOffset;
+@property (strong, nonatomic) DDDMapViewModel		*viewModel;
+@property (nonatomic, assign) CGPoint				defaultTextfieldOffset;
 @end
 
 @implementation DDDMapViewController
@@ -33,8 +34,8 @@
 	
 	[self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)]];
 	self.defaultTextfieldOffset = CGPointZero;
-	
-	self.searchManager = [[DDDLocalSearchManager alloc] init];
+	self.viewModel = [[DDDMapViewModel alloc] init];
+	[self.viewModel registerListener:self];
 }
 
 - (void)viewTapped:(UIGestureRecognizer *)gestureRecognizer
@@ -42,28 +43,13 @@
 	[self.view endEditing:YES];
 }
 
+#pragma mark - Textfield Actions
 - (void)textFieldContentsChanged:(UITextField *)textField
 {
-	NSString *contents = textField.text;
-	MKCoordinateRegion region = self.mapView.region;
-	[self.searchManager localSearchWithQuery:contents withRegion:region withHandler:^(NSArray *results, NSError *error) {
-		[self.mapView setSelectedAnnotations:[self mapAnnotationsForLocalSearchResults:results]];
-	}];
+	[self.viewModel localSearchWithQuery:textField.text region:self.mapView.region];
 }
 
-- (NSArray *)mapAnnotationsForLocalSearchResults:(NSArray *)searchResults
-{
-	NSMutableArray *annotations = [NSMutableArray array];
-	for (MKMapItem *item in searchResults)
-	{
-		MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-		annotation.coordinate = item.placemark.coordinate;
-		annotation.title = item.name;
-		[annotations addObject:annotation];
-	}
-	return annotations;
-}
-
+#pragma mark - Keyboard show/hide
 - (void)keyboardWillShow:(NSNotification *)notification
 {
 	[self.scrollView setContentOffset:self.mapSearchTextField.frame.origin animated:YES];
@@ -72,6 +58,29 @@
 - (void)keyboardWillHide:(NSNotification *)notification
 {
 	[self.scrollView setContentOffset:self.defaultTextfieldOffset animated:YES];
+}
+
+#pragma mark - DDDMapViewModelListener methods
+- (void)viewModel:(DDDMapViewModel *)viewModel didUpdateMapAnnotations:(NSArray *)mapAnnotations
+{
+	for (MKPointAnnotation *annotation in mapAnnotations)
+	{	
+		[self.mapView addAnnotation:annotation];
+	}
+}
+
+- (void)viewModel:(DDDMapViewModel *)viewModel didUpdateSearchResults:(NSArray *)searchResults
+{
+	
+}
+
+#pragma mark - Button Events
+- (IBAction)currentLocationButtonTapped:(id)sender
+{
+	if (self.viewModel.currentUserLocation)
+	{
+		[self.mapView setCenterCoordinate:self.viewModel.currentUserLocation.coordinate animated:YES];
+	}
 }
 
 @end

@@ -95,41 +95,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7o-XC-3mb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7o-XC-3mb">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SD8-YC-cFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="419"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rU3-Bs-LXN">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="361"/>
+                                                <rect key="frame" x="0.0" y="56" width="320" height="448"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </mapView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-M6-nWw">
-                                                <rect key="frame" x="20" y="389" width="280" height="30"/>
+                                                <rect key="frame" x="6" y="17" width="276" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-tk-2wf">
+                                                <rect key="frame" x="290" y="17" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="currentLocationButtonTapped:" destination="tbM-Z7-gzI" eventType="touchUpInside" id="Qv7-qP-GIb"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="o7o-XC-3mb" secondAttribute="trailing" id="22Z-l7-auF"/>
-                            <constraint firstItem="kRe-2a-2mT" firstAttribute="top" secondItem="o7o-XC-3mb" secondAttribute="bottom" id="4Rb-td-zgM"/>
-                            <constraint firstItem="o7o-XC-3mb" firstAttribute="leading" secondItem="nnL-he-FCD" secondAttribute="leading" id="86d-1V-jsg"/>
-                            <constraint firstItem="o7o-XC-3mb" firstAttribute="top" secondItem="mRq-2h-jHz" secondAttribute="bottom" id="D1A-wA-uEJ"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="myM-nH-oRq"/>
                     <connections>
+                        <outlet property="currentLocationButton" destination="9Tp-tk-2wf" id="ieP-oN-TRm"/>
                         <outlet property="mainContainerView" destination="SD8-YC-cFd" id="hbd-C4-GV6"/>
                         <outlet property="mapSearchTextField" destination="sp9-M6-nWw" id="b2m-my-oMB"/>
                         <outlet property="mapView" destination="rU3-Bs-LXN" id="FkZ-aJ-eha"/>
