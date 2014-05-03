@@ -16,7 +16,7 @@
 - (void)localSearchWithQuery:(NSString *)query region:(MKCoordinateRegion)region;
 @end
 
-@protocol DDDMapViewListener <DDDViewModelListener>
+@protocol DDDMapViewModelListener <DDDViewModelListener>
 - (void)viewModel:(DDDMapViewModel *)viewModel didUpdateSearchResults:(NSArray *)searchResults;
 - (void)viewModel:(DDDMapViewModel *)viewModel didUpdateMapAnnotations:(NSArray *)mapAnnotations;
 - (void)viewModel:(DDDMapViewModel *)viewModel didUpdateCurrentUserLocation:(CLLocation *)currentUserLocation;

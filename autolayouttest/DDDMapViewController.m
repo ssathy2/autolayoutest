@@ -9,15 +9,14 @@
 #import "DDDMapViewController.h"
 #import "DDDMapViewModel.h"
 
-@interface DDDMapViewController ()<UITextFieldDelegate, DDDMapViewListener>
+@interface DDDMapViewController ()<UITextFieldDelegate, DDDMapViewModelListener>
 @property (weak, nonatomic) IBOutlet MKMapView		*mapView;
 @property (weak, nonatomic) IBOutlet UITextField	*mapSearchTextField;
 @property (weak, nonatomic) IBOutlet UIScrollView	*scrollView;
 @property (weak, nonatomic) IBOutlet UIView			*mainContainerView;
 @property (weak, nonatomic) IBOutlet UIButton		*currentLocationButton;
-
-@property (strong, nonatomic) DDDMapViewModel		*viewModel;
 @property (nonatomic, assign) CGPoint				defaultTextfieldOffset;
+@property (weak, nonatomic) DDDMapViewModel			*viewModel;
 @end
 
 @implementation DDDMapViewController
@@ -34,8 +33,7 @@
 	
 	[self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)]];
 	self.defaultTextfieldOffset = CGPointZero;
-	self.viewModel = [[DDDMapViewModel alloc] init];
-	[self.viewModel registerListener:self];
+
 }
 
 - (void)viewTapped:(UIGestureRecognizer *)gestureRecognizer

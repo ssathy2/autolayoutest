@@ -1,16 +1,14 @@
 //
-//  DDDViewController.m
+//  DDDBaseViewController.m
 //  autolayouttest
 //
-//  Created by Sidd Sathyam on 21/04/14.
+//  Created by Sidd Sathyam on 02/05/14.
 //  Copyright (c) 2014 dotdotdot. All rights reserved.
 //
 
 #import "DDDViewController.h"
 
-#define DDDSegueEmbedMapViewControllerIdentifer @"DDDSegueEmbedMapViewController"
-
-@interface DDDViewController ()
+@interface DDDViewController ()<DDDViewModelListener>
 
 @end
 
@@ -19,48 +17,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 	
-	self.label1.text = @"SOME VERY LONG TEXT.SOME VERY LONG TEXT.SOME VERY LONG TEXT.SOME VERY LONG TEXT.SOME VERY LONG TEXT.SOME VERY LONG TEXT";
-	self.label2.text = @"MOO COW.MOO COW MOO COW MOO COW MOO COW MOO COW MOO COW MOO COW MOO COW";
-	
-	self.label3.text = @"BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH";
-	
-	[self addBigImage];
+	[self.viewModel registerListener:self];
 }
 
-- (void)addBigImage
+- (NSDictionary *)segueIdentifierToContainerViewControllerMapping
 {
-	UIImage *image = [UIImage imageNamed:@"bigimage"];
-	UIImageView *bigImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.scrollView.frame.origin.x,
-																			  self.scrollView.frame.origin.y,
-																			  image.size.width,
-																			  image.size.height)];
-	
-	[bigImageView setImage:image];
-	
-	[self.scrollView addSubview:bigImageView];
-	
-	self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-	bigImageView.translatesAutoresizingMaskIntoConstraints = NO;
-	
-
-	// Set the constraints for the scroll view and the image view.
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(self.scrollView, bigImageView);
-    [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bigImageView]|" options:0 metrics: 0 views:viewsDictionary]];
-    [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[bigImageView]|" options:0 metrics: 0 views:viewsDictionary]];
-	
-	
+	return nil;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super prepareForSegue:segue sender:sender];
+    NSString *path = [[self segueIdentifierToContainerViewControllerMapping] objectForKey:segue.identifier];
+    NSAssert(path, @"This segue identifier doesn't contain a mapping! Make sure segue identifier exists in the storyboard");
+    [self setValue:segue.destinationViewController forKeyPath:path];
+	if ([segue.destinationViewController isKindOfClass:[DDDViewController class]])
+	{
+		[self setValue:self.viewModel forKeyPath:@key(((DDDViewController *)segue.destinationViewController).viewModel)];
+	}
 }
-- (IBAction)showMapViewButtonTapped:(id)sender
-{
-	[self performSegueWithIdentifier:DDDSegueEmbedMapViewControllerIdentifer sender:self];
-}
-
 @end

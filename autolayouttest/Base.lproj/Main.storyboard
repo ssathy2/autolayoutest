@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Auto Layout View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="DDDViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DDDAutoLayoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -83,67 +83,58 @@
             </objects>
             <point key="canvasLocation" x="175" y="109"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map Container View Controller-->
         <scene sceneID="Y8d-Hf-gHt">
             <objects>
-                <viewController id="tbM-Z7-gzI" customClass="DDDMapViewController" sceneMemberID="viewController">
+                <viewController id="tbM-Z7-gzI" customClass="DDDMapContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mRq-2h-jHz"/>
-                        <viewControllerLayoutGuide type="bottom" id="kRe-2a-2mT"/>
+                        <viewControllerLayoutGuide type="top" id="Til-F5-gRD"/>
+                        <viewControllerLayoutGuide type="bottom" id="uZM-TF-Rsc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nnL-he-FCD">
+                    <view key="view" contentMode="scaleToFill" id="Ihy-rR-EiL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7o-XC-3mb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jl0-sb-69t">
+                                <rect key="frame" x="0.0" y="102" width="320" height="466"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="syC-zS-FbI" kind="embed" identifier="DDDSegueEmbedMapViewController" id="3di-jG-jGp"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4L-cZ-nBs">
+                                <rect key="frame" x="0.0" y="102" width="320" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SD8-YC-cFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rU3-Bs-LXN">
-                                                <rect key="frame" x="0.0" y="56" width="320" height="448"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </mapView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-M6-nWw">
-                                                <rect key="frame" x="6" y="17" width="276" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-tk-2wf">
-                                                <rect key="frame" x="290" y="17" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="C">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="currentLocationButtonTapped:" destination="tbM-Z7-gzI" eventType="touchUpInside" id="Qv7-qP-GIb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="UOf-eY-J7b" kind="embed" identifier="DDDSegueEmbedMapListViewController" id="MzW-nz-WNj"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cr8-Wp-iij">
+                                <rect key="frame" x="90" y="66" width="140" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="List"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapListSegmentControlValueChanged:" destination="tbM-Z7-gzI" eventType="valueChanged" id="hBZ-WE-FYC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="myM-nH-oRq"/>
                     <connections>
-                        <outlet property="currentLocationButton" destination="9Tp-tk-2wf" id="ieP-oN-TRm"/>
-                        <outlet property="mainContainerView" destination="SD8-YC-cFd" id="hbd-C4-GV6"/>
-                        <outlet property="mapSearchTextField" destination="sp9-M6-nWw" id="b2m-my-oMB"/>
-                        <outlet property="mapView" destination="rU3-Bs-LXN" id="FkZ-aJ-eha"/>
-                        <outlet property="scrollView" destination="o7o-XC-3mb" id="QZ0-w1-M12"/>
+                        <outlet property="mapListSegmentControl" destination="cr8-Wp-iij" id="Pbr-Fp-bQT"/>
+                        <outlet property="resultsMapListContainerView" destination="K4L-cZ-nBs" id="h4B-XQ-ztd"/>
+                        <outlet property="resultsMapViewContainerView" destination="jl0-sb-69t" id="Ydr-g3-pNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehm-Wk-pjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768" y="109"/>
+            <point key="canvasLocation" x="570" y="109"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZmM-Ri-dVa">
@@ -162,6 +153,191 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQp-lC-T07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-351" y="109"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="9NP-Db-Sj8">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="syC-zS-FbI" customClass="DDDMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PUi-Y8-K7U"/>
+                        <viewControllerLayoutGuide type="bottom" id="YQN-Xw-m05"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vsr-A5-S6l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="466"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqo-C0-Gox">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="461"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAH-Od-FPD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kaN-BA-zCH">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="405"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </mapView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTh-qa-sTH">
+                                                <rect key="frame" x="6" y="17" width="276" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71Z-u2-Tjc">
+                                                <rect key="frame" x="290" y="17" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="currentLocationButtonTapped:" destination="syC-zS-FbI" eventType="touchUpInside" id="Cd0-pt-8xo"/>
+                                                    <action selector="currentLocationButtonTapped:" destination="tbM-Z7-gzI" eventType="touchUpInside" id="SHk-SB-KMA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.066666670139999995" green="0.2470588386" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="currentLocationButton" destination="71Z-u2-Tjc" id="cyk-eb-FQp"/>
+                        <outlet property="mainContainerView" destination="HAH-Od-FPD" id="Ajl-8i-lS3"/>
+                        <outlet property="mapSearchTextField" destination="RTh-qa-sTH" id="Qqs-5W-P10"/>
+                        <outlet property="mapView" destination="kaN-BA-zCH" id="vXt-CX-hhO"/>
+                        <outlet property="scrollView" destination="eqo-C0-Gox" id="GSD-DE-63h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFK-CP-NdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="439"/>
+        </scene>
+        <!--Map List View Controller-->
+        <scene sceneID="3iR-Fd-Xq0">
+            <objects>
+                <viewController storyboardIdentifier="DDDMapListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UOf-eY-J7b" customClass="DDDMapListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sf8-EA-S1H"/>
+                        <viewControllerLayoutGuide type="bottom" id="F92-CS-Arl"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="al5-2G-Q5k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="466"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-I0-CKy">
+                                <rect key="frame" x="0.0" y="49" width="320" height="417"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="417" id="mhu-9f-6dV"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="slg-de-nyP">
+                                    <size key="itemSize" width="319" height="81"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DDDMapListCollectionViewCell" id="5pl-Df-bCU" customClass="DDDMapListCollectionViewCell">
+                                        <rect key="frame" x="1" y="0.0" width="319" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="81"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="94" translatesAutoresizingMaskIntoConstraints="NO" id="LC8-vy-e7m">
+                                                    <rect key="frame" x="20" y="10" width="94" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcL-I9-N7V">
+                                                    <rect key="frame" x="20" y="50" width="98" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="9oS-qP-dv2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                        <constraints>
+                                            <constraint firstItem="LC8-vy-e7m" firstAttribute="leading" secondItem="5pl-Df-bCU" secondAttribute="leading" constant="20" id="MDd-lq-hAP"/>
+                                            <constraint firstItem="BcL-I9-N7V" firstAttribute="leading" secondItem="LC8-vy-e7m" secondAttribute="leading" id="eCW-di-S9c"/>
+                                            <constraint firstItem="LC8-vy-e7m" firstAttribute="top" secondItem="5pl-Df-bCU" secondAttribute="top" constant="10" id="mPh-oe-Xdu"/>
+                                            <constraint firstAttribute="bottom" secondItem="BcL-I9-N7V" secondAttribute="bottom" constant="11" id="mtZ-Ya-zyF"/>
+                                            <constraint firstItem="BcL-I9-N7V" firstAttribute="top" secondItem="LC8-vy-e7m" secondAttribute="bottom" constant="18" id="xhW-HK-RzK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="LC8-vy-e7m" id="3qN-8f-n2V"/>
+                                            <outlet property="phoneNumberLabel" destination="BcL-I9-N7V" id="s3f-h2-sa2"/>
+                                            <segue destination="VXH-NF-4Ta" kind="modal" identifier="DDDPushSegueMapListDetailViewController" id="lef-8S-nCD"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="UOf-eY-J7b" id="WoY-P4-Zyv"/>
+                                    <outlet property="delegate" destination="UOf-eY-J7b" id="g2L-Jc-139"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="104" translatesAutoresizingMaskIntoConstraints="NO" id="WEN-iv-vRQ">
+                                <rect key="frame" x="108" y="20" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.1764705882352941" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WEN-iv-vRQ" firstAttribute="top" secondItem="Sf8-EA-S1H" secondAttribute="bottom" constant="20" id="A12-mz-ZSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="7gK-I0-CKy" secondAttribute="trailing" id="AIv-0g-fHt"/>
+                            <constraint firstItem="7gK-I0-CKy" firstAttribute="top" secondItem="WEN-iv-vRQ" secondAttribute="bottom" constant="8" id="OIB-uM-ads"/>
+                            <constraint firstAttribute="bottom" secondItem="7gK-I0-CKy" secondAttribute="bottom" id="WT9-qc-bia"/>
+                            <constraint firstItem="WEN-iv-vRQ" firstAttribute="leading" secondItem="al5-2G-Q5k" secondAttribute="leading" constant="108" id="ZkL-7G-TD0"/>
+                            <constraint firstItem="7gK-I0-CKy" firstAttribute="leading" secondItem="al5-2G-Q5k" secondAttribute="leading" id="hze-xF-koS"/>
+                            <constraint firstItem="7gK-I0-CKy" firstAttribute="centerX" secondItem="WEN-iv-vRQ" secondAttribute="centerX" id="iaE-aS-esj"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="collectionView" destination="7gK-I0-CKy" id="Yi4-3j-cj1"/>
+                        <outlet property="resultsLabel" destination="WEN-iv-vRQ" id="FmN-hF-q5m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obX-Rt-gCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="-499"/>
+        </scene>
+        <!--Map List Detail View Controller-->
+        <scene sceneID="UH1-Gw-k98">
+            <objects>
+                <viewController storyboardIdentifier="DDDMapListDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VXH-NF-4Ta" customClass="DDDMapListDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8cm-cd-zNG"/>
+                        <viewControllerLayoutGuide type="bottom" id="q5S-1A-gia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4gM-6w-7rz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="466"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CzE-77-0Rc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kap-TJ-Dqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="-499"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

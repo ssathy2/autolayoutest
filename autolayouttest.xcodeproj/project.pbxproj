@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3899DA1915537C0055785B /* DDDMapListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3899D91915537C0055785B /* DDDMapListDetailViewController.m */; };
 		DE3C6ECE191078F4002868EB /* DDDLocalSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6ECD191078F4002868EB /* DDDLocalSearchManager.m */; };
 		DE3C6ED219107C21002868EB /* NSMutableArray+Modification.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6ED019107C21002868EB /* NSMutableArray+Modification.m */; };
 		DE3C6ED51913138A002868EB /* DDDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6ED41913138A002868EB /* DDDViewModel.m */; };
 		DE3C6EDE191317A6002868EB /* DDDMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6EDD191317A6002868EB /* DDDMapViewModel.m */; };
+		DE3C6EE11913239D002868EB /* DDDMapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6EE01913239D002868EB /* DDDMapContainerViewController.m */; };
+		DE3C6EE419146BBB002868EB /* DDDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6EE319146BBB002868EB /* DDDViewController.m */; };
+		DE3C6EE719146CDF002868EB /* DDDMapListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6EE619146CDF002868EB /* DDDMapListViewController.m */; };
+		DE3C6EED19154BAA002868EB /* DDDMapListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6EEC19154BAA002868EB /* DDDMapListCollectionViewCell.m */; };
+		DE3C6EF119154CC7002868EB /* DDDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C6EF019154CC7002868EB /* DDDCollectionViewCell.m */; };
 		DE5F6228190618ED00C0D5D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F6227190618ED00C0D5D5 /* Foundation.framework */; };
 		DE5F622A190618ED00C0D5D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F6229190618ED00C0D5D5 /* CoreGraphics.framework */; };
 		DE5F622C190618ED00C0D5D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F622B190618ED00C0D5D5 /* UIKit.framework */; };
@@ -18,7 +24,7 @@
 		DE5F6234190618ED00C0D5D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F6233190618ED00C0D5D5 /* main.m */; };
 		DE5F6238190618ED00C0D5D5 /* DDDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F6237190618ED00C0D5D5 /* DDDAppDelegate.m */; };
 		DE5F623B190618ED00C0D5D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5F6239190618ED00C0D5D5 /* Main.storyboard */; };
-		DE5F623E190618ED00C0D5D5 /* DDDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F623D190618ED00C0D5D5 /* DDDViewController.m */; };
+		DE5F623E190618ED00C0D5D5 /* DDDAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F623D190618ED00C0D5D5 /* DDDAutoLayoutViewController.m */; };
 		DE5F6240190618ED00C0D5D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5F623F190618ED00C0D5D5 /* Images.xcassets */; };
 		DE5F6247190618ED00C0D5D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F6246190618ED00C0D5D5 /* XCTest.framework */; };
 		DE5F6248190618ED00C0D5D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5F6227190618ED00C0D5D5 /* Foundation.framework */; };
@@ -41,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE3899D81915537C0055785B /* DDDMapListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMapListDetailViewController.h; sourceTree = "<group>"; };
+		DE3899D91915537C0055785B /* DDDMapListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDMapListDetailViewController.m; sourceTree = "<group>"; };
 		DE3C6ECC191078F4002868EB /* DDDLocalSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDLocalSearchManager.h; sourceTree = "<group>"; };
 		DE3C6ECD191078F4002868EB /* DDDLocalSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDLocalSearchManager.m; sourceTree = "<group>"; };
 		DE3C6ED019107C21002868EB /* NSMutableArray+Modification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Modification.m"; path = "../../P2PTestApp/P2PTestApp/NSMutableArray+Modification.m"; sourceTree = "<group>"; };
@@ -49,6 +57,17 @@
 		DE3C6ED41913138A002868EB /* DDDViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDViewModel.m; sourceTree = "<group>"; };
 		DE3C6EDC191317A6002868EB /* DDDMapViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMapViewModel.h; sourceTree = "<group>"; };
 		DE3C6EDD191317A6002868EB /* DDDMapViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDMapViewModel.m; sourceTree = "<group>"; };
+		DE3C6EDF1913239D002868EB /* DDDMapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMapContainerViewController.h; sourceTree = "<group>"; };
+		DE3C6EE01913239D002868EB /* DDDMapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDMapContainerViewController.m; sourceTree = "<group>"; };
+		DE3C6EE219146BBB002868EB /* DDDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDViewController.h; sourceTree = "<group>"; };
+		DE3C6EE319146BBB002868EB /* DDDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDViewController.m; sourceTree = "<group>"; };
+		DE3C6EE519146CDF002868EB /* DDDMapListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMapListViewController.h; sourceTree = "<group>"; };
+		DE3C6EE619146CDF002868EB /* DDDMapListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDMapListViewController.m; sourceTree = "<group>"; };
+		DE3C6EE819146D75002868EB /* DDDMainStoryboardIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMainStoryboardIdentifiers.h; sourceTree = "<group>"; };
+		DE3C6EEB19154BAA002868EB /* DDDMapListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDMapListCollectionViewCell.h; sourceTree = "<group>"; };
+		DE3C6EEC19154BAA002868EB /* DDDMapListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDMapListCollectionViewCell.m; sourceTree = "<group>"; };
+		DE3C6EEF19154CC7002868EB /* DDDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDCollectionViewCell.h; sourceTree = "<group>"; };
+		DE3C6EF019154CC7002868EB /* DDDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDCollectionViewCell.m; sourceTree = "<group>"; };
 		DE5F6224190618ED00C0D5D5 /* autolayouttest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autolayouttest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5F6227190618ED00C0D5D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE5F6229190618ED00C0D5D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,8 +79,8 @@
 		DE5F6236190618ED00C0D5D5 /* DDDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDAppDelegate.h; sourceTree = "<group>"; };
 		DE5F6237190618ED00C0D5D5 /* DDDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDAppDelegate.m; sourceTree = "<group>"; };
 		DE5F623A190618ED00C0D5D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE5F623C190618ED00C0D5D5 /* DDDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDViewController.h; sourceTree = "<group>"; };
-		DE5F623D190618ED00C0D5D5 /* DDDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDViewController.m; sourceTree = "<group>"; };
+		DE5F623C190618ED00C0D5D5 /* DDDAutoLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDAutoLayoutViewController.h; sourceTree = "<group>"; };
+		DE5F623D190618ED00C0D5D5 /* DDDAutoLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDAutoLayoutViewController.m; sourceTree = "<group>"; };
 		DE5F623F190618ED00C0D5D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE5F6245190618ED00C0D5D5 /* autolayouttestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = autolayouttestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5F6246190618ED00C0D5D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,10 +131,13 @@
 		DE3C6ED619131393002868EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE5F623C190618ED00C0D5D5 /* DDDViewController.h */,
-				DE5F623D190618ED00C0D5D5 /* DDDViewController.m */,
-				DE5F625C1909E75D00C0D5D5 /* DDDMapViewController.h */,
-				DE5F625D1909E75D00C0D5D5 /* DDDMapViewController.m */,
+				DE3C6EEE19154CA2002868EB /* Shared */,
+				DE3C6EEA19154B6B002868EB /* Results Map */,
+				DE3C6EE919154B5E002868EB /* Results List */,
+				DE5F623C190618ED00C0D5D5 /* DDDAutoLayoutViewController.h */,
+				DE5F623D190618ED00C0D5D5 /* DDDAutoLayoutViewController.m */,
+				DE3C6EDF1913239D002868EB /* DDDMapContainerViewController.h */,
+				DE3C6EE01913239D002868EB /* DDDMapContainerViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -154,6 +176,39 @@
 				DE5F6239190618ED00C0D5D5 /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		DE3C6EE919154B5E002868EB /* Results List */ = {
+			isa = PBXGroup;
+			children = (
+				DE3C6EE519146CDF002868EB /* DDDMapListViewController.h */,
+				DE3C6EE619146CDF002868EB /* DDDMapListViewController.m */,
+				DE3C6EEB19154BAA002868EB /* DDDMapListCollectionViewCell.h */,
+				DE3C6EEC19154BAA002868EB /* DDDMapListCollectionViewCell.m */,
+				DE3899D81915537C0055785B /* DDDMapListDetailViewController.h */,
+				DE3899D91915537C0055785B /* DDDMapListDetailViewController.m */,
+			);
+			name = "Results List";
+			sourceTree = "<group>";
+		};
+		DE3C6EEA19154B6B002868EB /* Results Map */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F625C1909E75D00C0D5D5 /* DDDMapViewController.h */,
+				DE5F625D1909E75D00C0D5D5 /* DDDMapViewController.m */,
+			);
+			name = "Results Map";
+			sourceTree = "<group>";
+		};
+		DE3C6EEE19154CA2002868EB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DE3C6EE219146BBB002868EB /* DDDViewController.h */,
+				DE3C6EE319146BBB002868EB /* DDDViewController.m */,
+				DE3C6EEF19154CC7002868EB /* DDDCollectionViewCell.h */,
+				DE3C6EF019154CC7002868EB /* DDDCollectionViewCell.m */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		DE5F621B190618ED00C0D5D5 = {
@@ -200,6 +255,7 @@
 				DE3C6EDA191313CF002868EB /* Assets */,
 				DE3C6ED9191313C2002868EB /* Services */,
 				DE5F622E190618ED00C0D5D5 /* Supporting Files */,
+				DE3C6EE819146D75002868EB /* DDDMainStoryboardIdentifiers.h */,
 			);
 			path = autolayouttest;
 			sourceTree = "<group>";
@@ -331,14 +387,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3C6EE719146CDF002868EB /* DDDMapListViewController.m in Sources */,
 				DE5F6234190618ED00C0D5D5 /* main.m in Sources */,
 				DE3C6ED219107C21002868EB /* NSMutableArray+Modification.m in Sources */,
 				DE3C6EDE191317A6002868EB /* DDDMapViewModel.m in Sources */,
 				DE3C6ECE191078F4002868EB /* DDDLocalSearchManager.m in Sources */,
-				DE5F623E190618ED00C0D5D5 /* DDDViewController.m in Sources */,
+				DE3C6EE419146BBB002868EB /* DDDViewController.m in Sources */,
+				DE5F623E190618ED00C0D5D5 /* DDDAutoLayoutViewController.m in Sources */,
 				DE5F625E1909E75E00C0D5D5 /* DDDMapViewController.m in Sources */,
+				DE3899DA1915537C0055785B /* DDDMapListDetailViewController.m in Sources */,
 				DE3C6ED51913138A002868EB /* DDDViewModel.m in Sources */,
 				DE5F6238190618ED00C0D5D5 /* DDDAppDelegate.m in Sources */,
+				DE3C6EF119154CC7002868EB /* DDDCollectionViewCell.m in Sources */,
+				DE3C6EED19154BAA002868EB /* DDDMapListCollectionViewCell.m in Sources */,
+				DE3C6EE11913239D002868EB /* DDDMapContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
