@@ -18,7 +18,7 @@
 - (void)updateWithModel:(id)model
 {
 	[super updateWithModel:model];
-	self.mapItemModel = (MKMapItem *)self.mapItemModel;
+	self.mapItemModel = (MKMapItem *)model;
 	[self bindModelToUI];
 }
 

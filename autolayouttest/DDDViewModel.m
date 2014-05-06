@@ -22,6 +22,11 @@
 	return self;
 }
 
+- (void)initialRegistrationForListener
+{
+	for (SEL sel in self.)
+}
+
 - (void)registerListener:(id<DDDViewModelListener>)listener
 {
 	if (![self.listeners containsObject:listener])

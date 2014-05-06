@@ -25,6 +25,12 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.collectionView reloadData];
+}
+
 #pragma - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -38,11 +44,18 @@
 	[cell updateWithModel:mapItem];
 	return cell;
 }
+
 #pragma - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	
 }
 
+#pragma - DDDMapViewModelListener
+- (void)viewModel:(DDDMapViewModel *)viewModel didUpdateSearchResults:(NSArray *)searchResults
+{
+	self.resultsLabel.text = [NSString stringWithFormat:@"%i Results", searchResults.count];
+	[self.collectionView reloadData];
+}
 
 @end

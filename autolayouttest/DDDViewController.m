@@ -30,12 +30,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	[super prepareForSegue:segue sender:sender];
-    NSString *path = [[self segueIdentifierToContainerViewControllerMapping] objectForKey:segue.identifier];
+	NSDictionary *identifierMapping = [self segueIdentifierToContainerViewControllerMapping];
+	
+	if (!identifierMapping)
+		return;
+	
+    NSString *path = [identifierMapping objectForKey:segue.identifier];
     NSAssert(path, @"This segue identifier doesn't contain a mapping! Make sure segue identifier exists in the storyboard");
     [self setValue:segue.destinationViewController forKeyPath:path];
 	if ([segue.destinationViewController isKindOfClass:[DDDViewController class]])
 	{
-		[self setValue:self.viewModel forKeyPath:@key(((DDDViewController *)segue.destinationViewController).viewModel)];
+		[segue.destinationViewController performSelector:@selector(setViewModel:) withObject:self.viewModel];
 	}
 }
 @end

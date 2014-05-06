@@ -31,13 +31,36 @@ typedef NS_ENUM(NSInteger, DDDResultsView)
 
 @implementation DDDMapContainerViewController
 
+- (id)init
+{
+	self = [super init];
+	if (self)
+	{
+		[self sharedInit];
+	}
+	return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	if (self)
+	{
+		[self sharedInit];
+	}
+	return self;
+}
+
+- (void)sharedInit
+{
+	self.viewModel = [[DDDMapViewModel alloc] init];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	self.viewModel = [[DDDMapViewModel alloc] init];
-	[self.viewModel registerListener:self];
-	
 	[self showView:DDDResultsViewMap];
 }
 
